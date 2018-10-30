@@ -8,9 +8,20 @@ var world;
 var particels = [];
 var stickman;
 var border;
+
+
 function newParticle(){
 	var p = new Particles(300, -100, 10);
 	particels.push(p);
+}
+
+function moveStickMan(){
+	if (keyIsDown(LEFT_ARROW)) {
+		Body.setVelocity(stickman.body, {x: -1, y :0});
+	}
+	if (keyIsDown(RIGHT_ARROW)) {
+		Body.setVelocity(stickman.body, {x: 1, y :0});
+	}
 }
 
 function setup() {
@@ -25,12 +36,7 @@ function setup() {
 function draw() {
 	background(51);
 
-	if (keyIsDown(LEFT_ARROW)) {
-		Body.setVelocity(stickman.body, {x: -1, y :0});
-	}
-	if (keyIsDown(RIGHT_ARROW)) {
-		Body.setVelocity(stickman.body, {x: 1, y :0});
-	}
+	moveStickMan();
 
 	for(var i = 0; i < particels.length; i++){
 		particels[i].show();
@@ -43,18 +49,7 @@ function draw() {
 	border.show();
 	Engine.update(engine);
 }
-/*
-function keyPressed() {
-	if(keyCode === LEFT_ARROW){
-		Body.setVelocity(stickman.body, {x: -1, y :0});
-	}
-	if(keyCode === RIGHT_ARROW){
-		Body.setVelocity(stickman.body, {x: 1, y :0});
-	}
-	if(keyCode === UP_ARROW){
-	}
-}
-*/
+
 function keyReleased(){
 		Body.setVelocity(stickman.body, {x: 0, y :0});
 }
