@@ -19,15 +19,18 @@ function setup() {
 	world = engine.world;
 
 	stickman = new Stickman(300, 300, 40, 120);
-	border = new Border(width/2, height, width, 20);
+	border = new Border(width/2, height, width, 30);
 }
 
 function draw() {
 	background(51);
 
-	if(keyIsDown(LEFT_ARROW))Body.setVelocity(stickman.body, {x: -1, y :0});
-	if(keyIsDown(RIGHT_ARROW))Body.setVelocity(stickman.body, {x: 1, y :0});
-	
+	if (keyIsDown(LEFT_ARROW)) {
+		Body.setVelocity(stickman.body, {x: -1, y :0});
+	}
+	if (keyIsDown(RIGHT_ARROW)) {
+		Body.setVelocity(stickman.body, {x: 1, y :0});
+	}
 
 	for(var i = 0; i < particels.length; i++){
 		particels[i].show();
