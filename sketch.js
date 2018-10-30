@@ -25,6 +25,10 @@ function setup() {
 function draw() {
 	background(51);
 
+	if(keyIsDown(LEFT_ARROW))Body.setVelocity(stickman.body, {x: -1, y :0});
+	if(keyIsDown(RIGHT_ARROW))Body.setVelocity(stickman.body, {x: 1, y :0});
+	
+
 	for(var i = 0; i < particels.length; i++){
 		particels[i].show();
 		if(particels[i].isOfScreen()){
@@ -36,7 +40,7 @@ function draw() {
 	border.show();
 	Engine.update(engine);
 }
-
+/*
 function keyPressed() {
 	if(keyCode === LEFT_ARROW){
 		Body.setVelocity(stickman.body, {x: -1, y :0});
@@ -47,6 +51,7 @@ function keyPressed() {
 	if(keyCode === UP_ARROW){
 	}
 }
+*/
 function keyReleased(){
 		Body.setVelocity(stickman.body, {x: 0, y :0});
 }
