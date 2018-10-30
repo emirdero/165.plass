@@ -36,4 +36,3 @@ function draw() {
 	stickman.show();
 	Engine.update(engine);
 }
-// Heisann
