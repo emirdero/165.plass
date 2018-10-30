@@ -2,9 +2,13 @@ function Stickman(x,y,w,h) {
   var options = {
     isStatic: false,
   }
-  this.body = Bodies.rectangle(x, y, w, h, options);
+  this.x = x;
+  this.y = y;
   this.w = w;
   this.h = h;
+
+  this.body = Bodies.rectangle(this.x, this.y, this.w, this.h, options);
+
   World.add(world, this.body);
 }
 
@@ -37,3 +41,18 @@ Stickman.prototype.show = function(){
   line(0,0,(-this.w/2),0);
   pop();
 }
+/*
+Stickman.prototype.up = function(){
+  for(var i = 0; i < 20; i++){
+    this.y += 1;
+  }
+}
+
+Stickman.prototype.right = function(){
+  this.x = this.x + 10;
+}
+
+Stickman.prototype.left = function(){
+  this.x = this.x + 10;
+}
+*/

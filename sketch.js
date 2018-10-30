@@ -23,9 +23,6 @@ function setup() {
 
 function draw() {
 	background(51);
-	if(frameCount % 1 == 0){
-		//newParticle();
-	}
 
 	for(var i = 0; i < particels.length; i++){
 		particels[i].show();
@@ -40,10 +37,15 @@ function draw() {
 }
 
 function keyPressed() {
-	if(key == ' ') {
-		Stickman.up();
+	if(keyCode === LEFT_ARROW){
 	}
-	if(key == 'a'){
-
+	if(keyCode === RIGHT_ARROW){
+		Body.setVelocity(stickman.body, {x: 1, y :0});
 	}
+	if(keyCode === UP_ARROW){
+		Body.setVelocity(stickman.body, {x: 1, y :0});
+	}
+}
+function keyReleased(){
+		Body.setVelocity(stickman.body, {x: 0, y :0});
 }
