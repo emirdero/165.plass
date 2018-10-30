@@ -6,6 +6,7 @@ var engine;
 var world;
 var particels = [];
 var stickman;
+var border;
 function newParticle(){
 	var p = new Particles(300, -100, 10);
 	particels.push(p);
@@ -17,11 +18,11 @@ function setup() {
 	world = engine.world;
 
 	stickman = new Stickman(300, 300, 40, 120);
+	border = new Border(width/2, height, width, 20);
 }
 
 function draw() {
 	background(51);
-
 	if(frameCount % 1 == 0){
 		//newParticle();
 	}
@@ -34,5 +35,15 @@ function draw() {
 		}
 	}
 	stickman.show();
+	border.show();
 	Engine.update(engine);
+}
+
+function keyPressed() {
+	if(key == ' ') {
+		Stickman.up();
+	}
+	if(key == 'a'){
+
+	}
 }
