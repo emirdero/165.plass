@@ -17,10 +17,10 @@ function newParticle(){
 
 function moveStickMan(){
 	if (keyIsDown(LEFT_ARROW)) {
-		Body.setVelocity(stickman.body, {x: -1, y: 0});
+		Body.setVelocity(stickman.body, {x: -2, y: stickman.body.velocity.y});
 	}
 	if (keyIsDown(RIGHT_ARROW)) {
-		Body.setVelocity(stickman.body, {x: 1, y: 0});
+		Body.setVelocity(stickman.body, {x: 2, y: stickman.body.velocity.y});
 	}
 }
 
@@ -51,12 +51,14 @@ function draw() {
 }
 
 function keyPressed(){
-	if(keyCode === UP_ARROW){
-		Body.setVelocity(stickman.body, {x: 0, y :-10});
+	if(keyCode === UP_ARROW && stickman.body.velocity.y >= 0 && stickman.body.velocity.y < 0.5){
+		Body.setVelocity(stickman.body, {x: 0, y: -10});
 	}
 }
 
 
 function keyReleased(){
-		Body.setVelocity(stickman.body, {x: 0, y: 0});
+	Body.setVelocity(stickman.body, {x: 0, y: stickman.body.velocity.y});
 }
+
+
