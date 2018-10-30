@@ -1,6 +1,7 @@
 var Engine = Matter.Engine,
 	World = Matter.World,
 	Bodies = Matter.Bodies;
+	Body = Matter.Body;
 
 var engine;
 var world;
@@ -38,12 +39,12 @@ function draw() {
 
 function keyPressed() {
 	if(keyCode === LEFT_ARROW){
+		Body.setVelocity(stickman.body, {x: -1, y :0});
 	}
 	if(keyCode === RIGHT_ARROW){
 		Body.setVelocity(stickman.body, {x: 1, y :0});
 	}
 	if(keyCode === UP_ARROW){
-		Body.setVelocity(stickman.body, {x: 1, y :0});
 	}
 }
 function keyReleased(){

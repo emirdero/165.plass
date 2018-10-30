@@ -1,6 +1,8 @@
 function Border(x,y,w,h) {
   var options = {
     isStatic: true,
+    friction: 0,
+    
   }
   this.body = Bodies.rectangle(x, y, w, h, options);
   this.w = w;

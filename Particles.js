@@ -1,6 +1,7 @@
 function Particles(x,y,r) {
   var options = {
     isStatic: false,
+    friction: 0,
   }
   this.body = Bodies.circle(x, y, r, options);
   this.r = r;
