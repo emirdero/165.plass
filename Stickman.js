@@ -38,7 +38,7 @@ Stickman.prototype.show = function(){
   push();
   translate(pos.x, pos.y);
   rectMode(CENTER);
-  //rect(0, 0, this.w, this.h);
+  rect(0, 0, this.w, this.h);
   fill(255, 0, 0);
   stroke(255, 0, 0);
   //Hode
