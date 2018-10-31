@@ -15,14 +15,7 @@ function newParticle(){
 	particels.push(p);
 }
 
-function moveStickMan(){
-	if (keyIsDown(LEFT_ARROW)) {
-		Body.setVelocity(stickman.body, {x: -2, y: stickman.body.velocity.y});
-	}
-	if (keyIsDown(RIGHT_ARROW)) {
-		Body.setVelocity(stickman.body, {x: 2, y: stickman.body.velocity.y});
-	}
-}
+
 
 function setup() {
 	createCanvas(600, 600);
@@ -36,7 +29,7 @@ function setup() {
 function draw() {
 	background(51);
 
-	moveStickMan();
+	stickman.moveStickman();
 
 	for(var i = 0; i < particels.length; i++){
 		particels[i].show();
@@ -51,14 +44,9 @@ function draw() {
 }
 
 function keyPressed(){
-	if(keyCode === UP_ARROW && stickman.body.velocity.y >= 0 && stickman.body.velocity.y < 0.5){
-		Body.setVelocity(stickman.body, {x: 0, y: -10});
-	}
-}
 
+}
 
 function keyReleased(){
 	Body.setVelocity(stickman.body, {x: 0, y: stickman.body.velocity.y});
 }
-
-

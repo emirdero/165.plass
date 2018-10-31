@@ -19,6 +19,18 @@ Stickman.prototype.isOfScreen = function(){
     return(x < -50 || x > width + 50 || y > height + 50);
 }
 
+Stickman.prototype.moveStickman = function(){
+	if (keyIsDown(LEFT_ARROW)) {
+		Body.setVelocity(stickman.body, {x: -2, y: stickman.body.velocity.y});
+	}
+	if (keyIsDown(RIGHT_ARROW)) {
+		Body.setVelocity(stickman.body, {x: 2, y: stickman.body.velocity.y});
+	}
+  if(keyIsDown(UP_ARROW) && stickman.body.velocity.y >= 0 && stickman.body.velocity.y < 0.5){
+    Body.setVelocity(stickman.body, {x: 0, y: -10});
+  }
+}
+
 Stickman.prototype.show = function(){
   fill(0, 255, 0);
   stroke(0, 255, 0);
